@@ -3,10 +3,16 @@ import { useContext, createContext, useState, SetStateAction, Dispatch, useEffec
 
 type ChildrenType<T = {}> = T & { children?: React.ReactNode };
 
+type ProductType = {
+    id: number;
+    name: string;
+    picture: string;
+    price: number;
+}
+
 type ProductsContextType = {
-    //  TODO: criar type do produto
-  products: object[];
-  setProducts: Dispatch<SetStateAction<object[]>>;
+  products: ProductType[];
+  setProducts: Dispatch<SetStateAction<ProductType[]>>;
 };
 
 const ProductsContext = createContext<ProductsContextType>({
@@ -15,10 +21,10 @@ const ProductsContext = createContext<ProductsContextType>({
 });
 
 export const ProductsProvider = ({ children }: ChildrenType) => {
-  const [productsList, setProductsList] = useState<object[]>([]);
+  const [productsList, setProductsList] = useState<ProductType[]>([]);
 
   async function getProductsList() {
-    const response = await axios.get<object[]>(
+    const response = await axios.get<ProductType[]>(
       'http://localhost:3001/products',
     );
     setProductsList(response.data);
