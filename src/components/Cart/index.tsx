@@ -26,7 +26,7 @@ const MenuPayment = ({ isOpen, setIsOpen }: MenuPaymentProps) => {
 
   const calcTotal = () => {
     const total = products.reduce((acc, product) => {
-      return acc + ((product.qtd || 0) * product.price);
+      return acc + (product.qtd * product.price);
     }, 0);
     return total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
   }
@@ -40,7 +40,7 @@ const MenuPayment = ({ isOpen, setIsOpen }: MenuPaymentProps) => {
       </Header>
       {
         products.map((product) => {
-          if(!!product.qtd) {
+          if(product.qtd > 0) {
             return (
               <Product
                 {...product}

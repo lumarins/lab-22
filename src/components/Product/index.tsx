@@ -6,10 +6,11 @@ export type ProductProps = {
   name: string;
   price: number;
   picture: string;
-  qtd?: number;
+  quantity: number;
+  qtd: number;
 };
 
-const Product = ({ id, name, price, picture, qtd = 0 }: ProductProps) => (
+const Product = ({ id, name, price, picture, quantity, qtd }: ProductProps) => (
   <Wrapper>
     <img src={picture} alt={`Imagem de referência ${name}`} />
 
@@ -17,6 +18,7 @@ const Product = ({ id, name, price, picture, qtd = 0 }: ProductProps) => (
       <Column>
         <Text>{name}</Text>
         <Text>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
+        <Text>Disponível em Estoque: { quantity }</Text>
       </Column>
 
       <WrapperIncrementor>
