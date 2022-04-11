@@ -8,6 +8,7 @@ type ProductType = {
     name: string;
     picture: string;
     price: number;
+    qtd?: number;
 }
 
 type ProductsContextType = {
