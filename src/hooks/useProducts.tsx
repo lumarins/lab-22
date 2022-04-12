@@ -29,7 +29,11 @@ export const ProductsProvider = ({ children }: ChildrenType) => {
     const response = await axios.get<ProductType[]>(
       'http://localhost:3001/products',
     );
-    setProductsList(response.data);
+    const newProductsList = response.data.map((product) => {
+      product.qtd = 0;
+      return product;
+    });
+    setProductsList(newProductsList);
   } 
 
   useEffect(() => {

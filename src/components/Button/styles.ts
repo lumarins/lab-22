@@ -13,7 +13,7 @@ export const Wrapper = styled.button<Omit<ButtonProps, "children">>`
     border-radius: ${theme.border.radius.default};
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.weight.bold};
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.black};
     line-height: 1.9rem;
 
     ${fullWidth &&

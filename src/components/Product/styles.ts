@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   margin-bottom: 3.2rem;
   ${({ theme }) => css`
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.lightPink};
+    border: 1px solid ${theme.colors.black};
     border-radius: ${theme.border.radius.other};
 
     img {
@@ -52,6 +52,34 @@ export const Text = styled.p`
     font-family: ${theme.font.family.roboto};
     font-size: ${theme.font.sizes.small};
     color: ${theme.colors.black};
+    font-weight: ${theme.font.weight.light};
+    margin-top: 0.4rem;
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.xsmall};
+      margin-top: 0;
+    `}
+  `}
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.4rem;
+    ${({ theme }) => css`
+      color: ${theme.colors.white};
+    `}
+  }
+`;
+
+export const TextStorage = styled.span`
+  display: flex;
+  align-items: center;
+  width: 400px;
+
+  ${({ theme }) => css`
+    font-family: ${theme.font.family.roboto};
+    font-size: ${theme.font.sizes.small};
+    color: #db6b6b;
     font-weight: ${theme.font.weight.light};
     margin-top: 0.4rem;
 

@@ -40,7 +40,7 @@ export const Header = styled.div`
 
   > svg {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.black};
     width: 3rem;
   }
 `;

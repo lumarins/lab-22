@@ -6,11 +6,11 @@ export const Wrapper = styled.header`
   justify-content: flex-end;
   padding: 1rem 2rem;
   margin-bottom: 1.6rem;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.black};
 
   > svg {
     cursor: pointer;
-    color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
     width: 3rem;
   }
 `;

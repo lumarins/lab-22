@@ -1,5 +1,5 @@
 import Incrementor from "../Incrementor";
-import { Wrapper, Info, Column, Text, WrapperIncrementor } from "./styles";
+import { Wrapper, Info, Column, Text, WrapperIncrementor, TextStorage } from "./styles";
 
 export type ProductProps = {
   id: number;
@@ -18,13 +18,14 @@ const Product = ({ id, name, price, picture, quantity, qtd }: ProductProps) => (
       <Column>
         <Text>{name}</Text>
         <Text>{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
-        <Text>Disponível em Estoque: { quantity }</Text>
       </Column>
 
       <WrapperIncrementor>
         <Incrementor id={id} quantity={qtd} />
       </WrapperIncrementor>
     </Info>
+
+    <TextStorage>Disponível em Estoque: { quantity }</TextStorage>
   </Wrapper>
 );
 
